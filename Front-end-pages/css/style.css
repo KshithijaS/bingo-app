@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 
 body {
     background: #6F2232;
-    font-family: Segoe script;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #social-media {
@@ -30,6 +32,8 @@ body {
 
 #main .h1 {
     color: #FFAE7E;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
 }
 
 #introduction {
@@ -68,14 +72,28 @@ body {
     background: #EB4C5D;
 }
 
+#page-tracker {
+    top: 35%;
+    right: 30px;
+}
+
+.dot {
+    margin: 2rem;
+    padding: 7px;
+    height: 10px;
+    width: 10px;
+    background-color: #FFC37B;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 #chat-icon {
     bottom: 20px;
     right: 20px;
-    background: #4A2359;
 }
 
 #chat-icon img {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
