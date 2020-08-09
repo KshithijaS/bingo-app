@@ -73,6 +73,7 @@ header{
     width: 45%;
     color: #fff;
     background: linear-gradient(45deg, #302FE4, #8F3E9F, #EB4C5D);
+    border-color: #6F2232;
     transition: 0.3s;
 }
 
