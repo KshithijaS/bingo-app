@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #6F2232;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    padding-top: 50px;
+    padding-right: 11%;
+    padding-left: 11%;
+    color:#FFAE7E;
+}
+
+#chat-icon {
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.h1 {
+    color: #FFAE7E;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+}
+
+#login-form {
+    text-align: center;
+    display: block;
+    height: 100vh;
+}
+
+.form-block {
+    margin-top: 2rem;
+    padding: 5% 5% 3% 5%;
+    background: #FFC37B;
+    height: auto;
+    width: 50%;
+    box-shadow: 25px 25px 15px #1a1a1a;
+}
+
+#submit-btn {
+    width: 45%;
+    color: #fff;
+    background: linear-gradient(45deg, #302FE4, #8F3E9F, #EB4C5D);
+    border-color: #FFC37B;
+    transition: 0.3s;
+    margin: 1rem 0;
+}
+
+#submit-btn:hover {
+    background: #EB4C5D;
+}
+
