@@ -29,12 +29,57 @@ header{
 }
 
 .profile-box {
-    background: #FFAE7E;
-    max-width: 800px;
-    max-height: 500px;
+    position: relative;
+    top: 25%;
+    left: 27%;
+    max-width: 650px;
+    height: auto;
     text-align: center;
+    box-shadow: 20px 20px 15px #1a1a1a;
+    padding: 0;
 }
 
-.user-info {
+#user-info {
     background: rgba(255, 174, 126, 0.66);
+    width: 40%;
+    margin: 0;
+}
+
+#achievements {
+    padding: 1rem;
+    background: #FFAE7E;
+    width: 60%;
+    margin: 0;
+}
+
+.selected {
+    padding: 0.1rem;
+    background: rgba(255, 195, 123, 70%);
+    box-shadow: 15px 15px 25px #1a1a1a;
+    cursor: pointer;
+}
+
+.deselected {
+    padding: 0.1rem;
+    background: rgba(255, 195, 123, 33%);
+    box-shadow: 5px 5px 20px #1a1a1a;
+    cursor: pointer;
+}
+
+.selected:hover, .deselected:hover {
+    background: #FFAE7E; /* Find an alternate color */
+}
+
+#sub-heading {
+    color: #C3073F;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.progress-content {
+    display: block;
+}
+
+.matches-content {
+    display: none;
 }
