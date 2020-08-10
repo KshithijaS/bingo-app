@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #6F2232;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 3rem;
+}
+
+header{
+    padding-top: 50px;
+    padding-right: 11%;
+    padding-left: 11%;
+    color:#FFAE7E;
+}
+
+#chat-icon {
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.sub-blocks {
+    text-align: center;
+}
+
+#id-btn {
+    margin-top: 3.3rem;
+    font-family: 'Lobster',cursive;
+    background: #FFC37B;
+    padding: 1rem 5rem;
+    color: #C3073F;
+    box-shadow: 15px 15px 20px #000;
+}
+
+#id-btn:hover {
+    background: #FFAE7E;
+    transform: scale(1.1);
+}
+
+.create-id {
+    display: none;
+    position: relative;
+    background: #FFC37B;
+    opacity: 66%;
+    color: #000;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0 2rem 9rem;
+    max-width: 300px;
+}
+
+.enter-id {
+    display: none;
+    margin: 2rem;
+}
+
