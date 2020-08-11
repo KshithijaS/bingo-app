@@ -1,0 +1,49 @@
+body{
+    background-color: #6F2232;
+  }
+  header{
+    padding-top: 50px;
+    padding-right: 11%;
+    padding-left: 11%;
+    color:#FFAE7E;
+  }
+  .signup-block{
+    display:block;
+    margin-top: 2rem;
+    background-color: #FFC37B;
+    color: #6F2232;
+    height:auto;
+    margin-left: 33%;
+    margin-right:33%;
+    box-shadow: 15px 15px 7px #1a1a1a;
+}
+.block-content{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.button{
+    text-align: center;
+}
+#play-now-btn {
+    width: 225px;
+    color: #fff;
+    background: linear-gradient(45deg, #302FE4, #8F3E9F, #EB4C5D);
+    border-color: #FFC37B;
+    transition: 0.3s;
+    margin-bottom: 4%;
+}
+
+#play-now-btn:hover {
+    background: #EB4C5D;
+}
+
+#chat-icon {
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}

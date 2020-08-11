@@ -1,0 +1,23 @@
+body{
+    background-color: #6F2232;
+  }
+header{
+    padding-top: 50px;
+    padding-right: 11%;
+    padding-left: 11%;
+    color:#FFAE7E;
+  }
+.container{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+#chat-icon {
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
