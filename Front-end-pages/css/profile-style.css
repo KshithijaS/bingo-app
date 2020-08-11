@@ -8,6 +8,7 @@
 body {
     background: #6F2232;
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 3rem;
 }
 
 header{
@@ -55,14 +56,14 @@ header{
 .selected {
     padding: 0.1rem;
     background: rgba(255, 195, 123, 95%);
-    box-shadow: 15px 15px 25px #1a1a1a;
+    box-shadow: 0px 15px 25px #1a1a1a;
     cursor: pointer;
 }
 
 .deselected {
     padding: 0.1rem;
     background: rgba(255, 195, 123, 33%);
-    box-shadow: 5px 5px 20px #1a1a1a;
+    box-shadow: 0px 5px 20px #1a1a1a;
     cursor: pointer;
 }
 
@@ -79,6 +80,7 @@ header{
 .tab-content {
     display: none;
 }
+
 .underline:after {
 	content: '';
 	display: block;
@@ -86,9 +88,7 @@ header{
 	height: 3px;
 	background-color:lightcoral;
 }
-.matches-content {
-    display: none;
-}
+
   /*Profile Pic Start*/
 .picture-container{
     position: relative;
