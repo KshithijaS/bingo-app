@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f0e065c187.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/invite-style.css">
+    <title>Fringo| Invite Friends</title>
+</head>
+<body>
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-light bg-transparent">
+          <img src="images/bingo_logo.png" height=20% width=23%>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" style="font-size: 28px; color:#FFAE7E; font-family: 'Lobster',cursive;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" style="font-size: 28px; color:#FFAE7E; font-family: 'Lobster',cursive;">Login/Sign-up</a>
+            </li>
+          </ul>
+        </nav>
+        <br><br><br>
+    </header> 
+    <div id="chat">
+        <button type="button" class="btn rounded-circle position-fixed" id="chat-icon"><img src="images/chat-icon.png" alt="chat-icon"></button>
+    </div>
+
+    <div class="id-sharing">
+      <p class="h1" style="font-family: 'Lobster',cursive; color:#FFAE7E; text-align: center;">Share ID With Friends to Play</p>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-6 sub-blocks align-items-center">
+          <div class="col-md">
+            <button type="button" onclick="createID()" class="btn btn-lg rounded-pill" id="id-btn">
+              <p class="h4">Create ID</p>
+            </button>
+          </div>
+          <div class="col-md">
+            <div class="create-id" id="dropdown1">
+              <p style="font-weight: bold;">ID: 572DFh442</p>
+              <hr style="height: 2px; border: none; color: #333; background-color: #333;">
+              <div class="row justify-content-center"> 
+                <div class="col-sm-4">
+                  <a href="#" style="color: inherit; margin: 2rem 0;"><i class="fab fa-facebook-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" style="color: inherit; margin: 2rem 0;"><i class="fab fa-whatsapp-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" style="color: inherit; margin: 2rem 0;"><i class="fab fa-twitter-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" style="color: inherit; margin: 2rem 0;"><i class="fab fa-instagram-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="#" style="color: inherit; margin: 2rem 0;"><i class="fab fa-snapchat-square" style="transform: scale(2);"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 sub-blocks">
+          <button type="button" class="btn btn-lg rounded-pill" onclick="enterID()" id="id-btn">
+            <p class="h4">Enter ID</p>
+          </button>
+          <div class="enter-id" id="dropdown2">
+            <input type="text" placeholder="Enter ID" required style="border-color: #000; padding: 0.5rem; border-radius: 5px;">
+            <button type="button" class="btn btn-primary btn-sm">Proceed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/invite-main.js"></script>
+    <!--Bootstrap paths-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+</body>
+</html>
