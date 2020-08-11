@@ -1,15 +1,22 @@
-progress = document.getElementById("progress");
-matches = document.getElementById("matches");
-progress_content = document.getElementsByClassName("progress-content");
-matches_content = document.getElementsByClassName("matches-content");
+const tabItems = document.querySelectorAll('.tab-item');
+const tabItemContent = document.querySelectorAll('.tab-content');
 
+//Select tab content
+function selectItem(e) {
+    deselectTab();
+    //Adding appearence to tabs
+    this.classList.remove('deselected');
+    this.classList.add('selected');
 
-progress.addEventListenter('click') = function(event) {
-    matches_content.style.display = "none";
-    progress_content.style.display = "block";
+    //Tab content
+    const selectedContent = document.getElementById(`${this.id}-content`);
+    selectedContent.classList.add('show');
 }
 
-matches.addEventListenter('click') = function(event) {
-    progress_content.style.display = "none";
-    matches_content.style.display = "block";
+function deselectTab() {
+    tabItems.forEach(item => item.classList.remove('selected'));
+    tabItems.forEach(item => item.classList.add('deselected'));
+    tabItemContent.forEach(item => item.classList.remove('show'));
 }
+
+tabItems.forEach(item => item.addEventListener('click', selectItem));

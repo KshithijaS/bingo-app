@@ -54,7 +54,7 @@ header{
 
 .selected {
     padding: 0.1rem;
-    background: rgba(255, 195, 123, 70%);
+    background: rgba(255, 195, 123, 95%);
     box-shadow: 15px 15px 25px #1a1a1a;
     cursor: pointer;
 }
@@ -76,10 +76,10 @@ header{
     text-transform: uppercase;
 }
 
-.progress-content {
-    display: block;
+.tab-content {
+    display: none;
 }
 
-.matches-content {
-    display: none;
+.show {
+    display: block !important; 
 }
