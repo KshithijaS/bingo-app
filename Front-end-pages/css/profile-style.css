@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #6F2232;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    padding-top: 50px;
+    padding-right: 11%;
+    padding-left: 11%;
+    color:#FFAE7E;
+}
+
+#chat-icon {
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.profile-box {
+    position: relative;
+    top: 25%;
+    left: 27%;
+    max-width: 650px;
+    height: auto;
+    text-align: center;
+    box-shadow: 20px 20px 15px #1a1a1a;
+    padding: 0;
+}
+
+#user-info {
+    background: rgba(255, 174, 126, 0.66);
+    width: 40%;
+    margin: 0;
+}
+
+#achievements {
+    padding: 1rem;
+    background: #FFAE7E;
+    width: 60%;
+    margin: 0;
+}
+
+.selected {
+    padding: 0.1rem;
+    background: rgba(255, 195, 123, 70%);
+    box-shadow: 15px 15px 25px #1a1a1a;
+    cursor: pointer;
+}
+
+.deselected {
+    padding: 0.1rem;
+    background: rgba(255, 195, 123, 33%);
+    box-shadow: 5px 5px 20px #1a1a1a;
+    cursor: pointer;
+}
+
+.selected:hover, .deselected:hover {
+    background: #FFAE7E; /* Find an alternate color */
+}
+
+#sub-heading {
+    color: #C3073F;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.progress-content {
+    display: block;
+}
+
+.matches-content {
+    display: none;
+}
