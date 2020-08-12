@@ -209,6 +209,14 @@ header{
 /* -----SignUp Page----- */
 
 /* Signup */
+
+.signup-title {
+    text-align: center; 
+    font-family: 'Lobster',cursive;
+    color:#FFAE7E; 
+    font-size: 45px;
+}
+
 .signup-block{
     display:block;
     margin-top: 2rem;
@@ -219,10 +227,12 @@ header{
     margin-right:33%;
     box-shadow: 15px 15px 7px #1a1a1a;
 }
+
 .block-content{
     margin-left: 4%;
     margin-right: 4%;
 }
+
 .button{
     text-align: center;
 }
@@ -271,9 +281,20 @@ header{
     max-width: 300px;
 }
 
+.division-line {
+    height: 2px; 
+    border: none; 
+    color: #333; 
+    background-color: #333;
+}
+
 .id-share-icon {
     color: inherit;
     margin: 2rem 0;
+}
+
+.social-scale {
+    transform: scale(2);
 }
 
 .enter-id {
