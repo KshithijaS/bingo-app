@@ -28,16 +28,16 @@ header{
     border-radius: 50%;
 }
 
-.h1 {
-    color: #FFAE7E;
-    font-size: 50px;
-    font-family: 'Lobster', cursive;
-}
-
 #login-form {
     text-align: center;
     display: block;
     height: 100vh;
+}
+
+#login-form .h1 {
+    color: #FFAE7E;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
 }
 
 .form-block {
@@ -55,7 +55,7 @@ header{
     background: linear-gradient(45deg, #302FE4, #8F3E9F, #EB4C5D);
     border-color: #FFC37B;
     transition: 0.3s;
-    margin: 1rem 0;
+    
 }
 
 #submit-btn:hover {
