@@ -1,0 +1,56 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="position-fixed rounded-pill" id="social-media">
+        <div class="col-md-6">
+            <a href="#"><img src="images/facebook-icon.png" alt="share-on-facebook" id="social-icon"></a>
+        </div>
+        <div class="col-md-6">
+            <a href="#"><img src="images/twitter-icon.png" alt="share-on-twitter" id="social-icon"></a>
+        </div>
+        <div class="col-md-6">
+            <a href="#"><img src="images/instagram-icon.png" alt="share-on-instagram" id="social-icon"></a>
+        </div>
+    </div>
+    <div class="" id="main">
+        <div class="row align-items-center container">
+            <div class="col-md-6 text-left container" id="introduction">
+                <p class="h1 font-weight-bold">Fringo</p>
+                <p class="h6 text-white">Binge Playing Bingo?</p>
+                <br>
+                <a href="#" alt="Play-now"><button type="button" class="btn btn-md rounded-pill" id="custom-btn">Play Now!</button></a>
+            </div>
+            <div class="col-md-6 container" id="mobile">
+                <img class="img-fluid mobile-image" src="images/mobile.png" alt="Mobile-image">
+                <img class="img-fluid mobile-screen" src="images/mobile-screen.png" alt="game-on-mobile-screen">
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed d-sm-inline-flex flex-column" id="page-tracker">
+        <a href="#main"><span class="dot col"></span></a>
+        <a href="#key-features"><span class="dot col"></span></a>
+    </div>
+
+    <div class="wrap" id="key-features">
+        <div class="features">
+            <h1 style="font-size: 4rem; font-family: 'Lobster',cursive;">Key Features</h1>
+            <br><br>
+            <img src="https://store-images.s-microsoft.com/image/apps.17064.13607976411350846.d128610f-dbd5-477f-86ee-01acec0b8b46.25784bad-06fb-4f97-9705-081d5fd5f533?mode=scale&q=90&h=1080&w=1920" height=100% width=100%>
+        </div>
+    </div>
+    <br><br><br>
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-content">
+        <div class="lastimg">
+            <img class="img-fluid" src="images/playnow.png">
+        </div>
+        <br><br><br>
+        <div class="copyright">
+            <p>© 2020 Fringo, all rights reserved.<p>
+        </div>
+        </div>
+    </div>
+{% endblock content %}

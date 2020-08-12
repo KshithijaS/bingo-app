@@ -1,0 +1,56 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+    <!--Profile-->
+    <div class="profile-box row justify-content-center">
+        <div class="col-md-4" id="user-info">
+          <br><br>
+          <div class="container">
+            <div class="picture-container">
+                <div class="picture">
+                    <img src="images/profile-icon.jpg" class="picture-src" id="wizardPicturePreview" title="">
+                    <input type="file" id="wizard-picture" class="">
+                </div>
+            </div>
+          </div>
+          <p class="basic-info" allign="justify-content-center" style="font-family:'Lobster',cursive; color:#FFC37B; font-size:23px;">Username</p>
+          <br>
+          <p class="basic-inf-scoreo" allign="justify-content-center" style="font-family:'Lobster',cursive; color:#C3073F; font-size:23px;">Total-Score: 12320</p>
+        </div>
+        <div class="col-md-8" id="achievements">
+          <div class="row align-items-center justify-content-center">
+            <div class="col selected tab-item" id="progress">
+              <p id="sub-heading">Progress</p>
+            </div>
+            <div class="col deselected tab-item" id="matches">
+              <p id="sub-heading">Matches</p>
+            </div>
+          </div>
+          <br>
+            
+          <div class="tab-content show" id="progress-content">
+            <span class="underline"><p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">Matches Played: 100</p></span>
+            <span class="underline"><p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">Wins: 80</p></span>
+            <span class="underline"><p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">Lost: 15</p></span>
+            <span class="underline"><p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">Draw: 8</p></span>
+          </div>
+          <div class="tab-content" id="matches-content">
+            <span class="underline">
+              <p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">
+                You played against ksjf12<br>
+                🏆 You Won :)<br>
+                Points Earned: +25
+              </p>
+            </span>
+            <span class="underline">
+              <p style="font-family:'Lobster',cursive; color:#C3073F; font-size: 25px;">
+                You played against olk12<br>
+                💔 You Lost :(<br>
+                Points Earned: -25
+              </p>
+            </span>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="id-sharing">
+        <p class="h1" style="font-family: 'Lobster',cursive; color:#FFAE7E; text-align: center;">Share ID With Friends to Play</p>
+        <div class="row justify-content-center align-items-center">
+        <div class="col-lg-6 sub-blocks align-items-center">
+            <div class="col-md">
+            <button type="button" onclick="createID()" class="btn btn-lg rounded-pill" id="id-btn">
+                <p class="h4">Create ID</p>
+            </button>
+            </div>
+            <div class="col-md">
+            <div class="create-id" id="dropdown1">
+                <p class="font-weight-bold">ID: 572DFh442</p>
+                <hr style="height: 2px; border: none; color: #333; background-color: #333;">
+                <div class="row justify-content-center"> 
+                <div class="col-sm-4">
+                    <a href="#" class="id-share-icon" style="color: inherit; margin: 2rem 0;"><i class="fab fa-facebook-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="id-share-icon" style="color: inherit; margin: 2rem 0;"><i class="fab fa-whatsapp-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="id-share-icon" style="color: inherit; margin: 2rem 0;"><i class="fab fa-twitter-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="id-share-icon" style="color: inherit; margin: 2rem 0;"><i class="fab fa-instagram-square" style="transform: scale(2);"></i></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="id-share-icon" style="color: inherit; margin: 2rem 0;"><i class="fab fa-snapchat-square" style="transform: scale(2);"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-6 sub-blocks">
+            <button type="button" class="btn btn-lg rounded-pill" onclick="enterID()" id="id-btn">
+            <p class="h4">Enter ID</p>
+            </button>
+            <div class="enter-id" id="dropdown2">
+            <input class="id-box" type="text" placeholder="Enter ID" required style="border-color: #000; padding: 0.5rem; border-radius: 5px;">
+            <button type="button" class="btn btn-primary btn-sm">Proceed</button>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content %}

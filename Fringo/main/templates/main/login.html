@@ -1,0 +1,20 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="login-form">
+        <p class="h1">Login</p>
+        <div class="form-block container">
+            <form>
+                <div class="p-1 form-group" style="padding: 1rem;">
+                <input type="Username" required style="padding: 1rem; box-shadow: -2px 0 #4e4e4e, 0 2px #4e4e4e, 2px 0 #4e4e4e, 0 -2px #4e4e4e;" class="form-control credentials" id="exampleInputUsername" placeholder="Username">
+                </div>
+                <div class="p-1 form-group" style="padding: 1rem;">
+                <input type="password" required style="padding: 1rem; box-shadow: -2px 0 #4e4e4e, 0 2px #4e4e4e, 2px 0 #4e4e4e, 0 -2px #4e4e4e;" class="form-control credentials" id="examplePassword" placeholder="Create Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-md rounded-pill" id="custom-btn">Login</button>
+            </form>
+            <p id="signup-link">New User? <a href="#" style="color: #C3073F;">Sign Up</a></p>
+        </div>
+    </div>
+{% endblock content %}
