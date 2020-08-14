@@ -1,3 +1,25 @@
+// NavBar alterations based on the page
+
+function checkUrlStr(subStr) {
+    return window.location.href.includes(subStr);
+}
+
+
+let secondNavBar = document.querySelector(".item-2");
+let alink = secondNavBar.firstElementChild;
+if(checkUrlStr("login") || checkUrlStr("signup")) {
+    secondNavBar.removeChild(alink);
+}
+else if(checkUrlStr("choice") || checkUrlStr("invite")) {
+    alink.setAttribute("href", "{% url 'profile.html' %}");
+    alink.textContent = "Profile";
+}
+else if(checkUrlStr("myprofile")) {
+    alink.setAttribute("href", "#");
+    alink.textContent = "Logout";
+}
+
+
 // -----Invite Page-----
 
 function createID() {

@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+    <div class="play-btn">
+      <a href="{% url 'choice' %}" alt="Play-now"><button type="button" class="btn btn-md rounded-pill" id="custom-btn">Play Now!</button></a>
+    </div>
     <!--Profile-->
     <div class="profile-box row justify-content-center">
         <div class="col-md-4" id="user-info">
@@ -9,7 +12,7 @@
           <div class="container">
             <div class="picture-container">
                 <div class="picture">
-                    <img src="images/profile-icon.jpg" class="picture-src" id="wizardPicturePreview" title="">
+                    <img src="{% static 'images/profile-icon.jpg' %}" class="picture-src" id="wizardPicturePreview" title="">
                     <input type="file" id="wizard-picture" class="">
                 </div>
             </div>

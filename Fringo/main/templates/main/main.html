@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f0e065c187.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/bingo_logo.png' %}" />
 
     <title>Fringo| Binge Playing Bingo?</title>
 </head>
@@ -17,13 +18,13 @@
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-light bg-transparent">
-          <img src="images/bingo_logo.png" height=20% width=23%>
+          <img src="{% static 'images/bingo_logo.png' %}" height=20% width=23%>
           <ul class="nav">
-            <li class="nav-item" id="nav-members">
-              <a class="nav-link active" href="#">Home</a>
+            <li class="nav-item item-1">
+              <a class="nav-link active" id="nav-members" href="{% url 'landing' %}">Home</a>
             </li>
-            <li class="nav-item" id="nav-members">
-              <a class="nav-link active" href="#">Login/Sign-up</a>
+            <li class="nav-item item-2">
+              <a class="nav-link active" id="nav-members" href="{% url 'login' %}">Login/Sign-up</a>
             </li>
           </ul>
         </nav>
@@ -31,7 +32,7 @@
     </header>
     
     <div id="chat">
-        <button type="button" class="btn rounded-circle position-fixed" id="chat-icon"><img src="images/chat-icon.png" alt="chat-icon"></button>
+        <button type="button" class="btn rounded-circle position-fixed" id="chat-icon"><img src="{% static 'images/chat-icon.png' %}" alt="chat-icon"></button>
     </div>
 
     {% block content %}
@@ -39,7 +40,7 @@
     {% endblock content %}
 
     <!-- Javascript -->
-    <script src="{% static 'main/main.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
 
     <!--Bootstrap paths-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -5,10 +5,10 @@
     <div class="container" id="choice-container">
         <div class="row">
         <div class="col">
-            <a href="#"><img src="images/computer-choice.png" height=95% width=75%></a>
+            <a href="#"><img src="{% static 'images/computer-choice.png' %}" height=95% width=75%></a>
         </div>
         <div class="col">
-            <a href="#"><img src="images/friends-choice.png" height=95% width=75%></a>
+            <a href="{% url 'invite' %}"><img src="{% static 'images/friends-choice.png' %}" height=95% width=75%></a>
         </div>
         </div>
     </div>
