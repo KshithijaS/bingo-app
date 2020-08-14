@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-    <div class="container" id="choice-container">
-        <div class="row">
-        <div class="col">
-            <a href="#"><img src="{% static 'images/computer-choice.png' %}" height=95% width=75%></a>
-        </div>
-        <div class="col">
-            <a href="{% url 'invite' %}"><img src="{% static 'images/friends-choice.png' %}" height=95% width=75%></a>
-        </div>
+    <div id="choice-container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 mx-5 my-3">
+                <a href="#"><img class="img-fluid choice-option" src="{% static 'images/computer-choice.png' %}"></a>
+            </div>
+            <div class="col-lg-4 mx-5 my-3">
+                <a href="{% url 'invite' %}"><img class="img-fluid choice-option" src="{% static 'images/friends-choice.png' %}"></a>
+            </div>
         </div>
     </div>
 {% endblock content %}

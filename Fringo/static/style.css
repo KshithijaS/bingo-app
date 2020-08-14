@@ -243,6 +243,18 @@ header{
 #choice-container{
     margin-left: 15%;
     margin-right: 15%;
+    max-width: 100%;
+}
+
+.choice-option {
+    position: relative;
+    border-radius: 50%;
+    height: auto;
+    width: auto;
+}
+
+.choice-option:hover {
+    transform: scale(1.2);
 }
 
 /* -----Invite Page----- */
@@ -251,6 +263,11 @@ header{
     font-family: 'Lobster',cursive; 
     color:#FFAE7E; 
     text-align: center;
+}
+
+#id-row {
+    margin: auto !important; 
+    position: relative;
 }
 
 .sub-blocks {
@@ -279,7 +296,7 @@ header{
     color: #000;
     border-radius: 15px;
     padding: 2rem;
-    margin: 2rem 0 2rem 9rem;
+    /* margin: 2rem 0 2rem 9rem; */
     max-width: 300px;
 }
 
@@ -449,6 +466,11 @@ header{
 
 
 /* Media Queries */
+
+/* @media (min-width: 950px) {
+    
+} */
+
 @media (min-width: 600px) {
     #page-tracker {
         display: none;
