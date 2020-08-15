@@ -33,6 +33,7 @@ header{
 #chat-icon {
     bottom: 20px;
     right: 20px;
+    z-index: 999;
 }
 
 #chat-icon img {
@@ -296,7 +297,7 @@ header{
     color: #000;
     border-radius: 15px;
     padding: 2rem;
-    /* margin: 2rem 0 2rem 9rem; */
+    margin: 2rem;
     max-width: 300px;
 }
 
