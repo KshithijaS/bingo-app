@@ -1,0 +1,24 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="login-form">
+        <p class="h1">Login</p>
+        <div class="form-block container">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="p-1 form-group">
+                <input type="text" name="username" required class="form-control credentials" id="exampleInputUsername" placeholder="Username">
+                </div>
+                <div class="p-1 form-group">
+                <input type="password" name="password" required class="form-control credentials" id="examplePassword" placeholder="Enter Password">
+                </div>
+                <input type="submit" class="btn btn-primary" value="login" id="custom-btn">
+            </form>
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            <p id="signup-link">New User? <a href="{% url 'signup' %}">Sign Up</a> or <a href=#>Forgot Password?</a></p>
+        </div>
+    </div>
+{% endblock content %}

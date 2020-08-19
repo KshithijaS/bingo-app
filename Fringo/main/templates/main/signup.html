@@ -21,11 +21,11 @@
                 {{form.password2.label}}
                 {{form.password2}}
                 
-                <input type="submit" class="btn btn-primary" value="submit">
+                <input type="submit" class="btn btn-primary" value="submit" id="custom-btn">
 
 
                 {{form.errors}}
-                <p id="signup-link"><center>Already have an account? <a href="{% url 'signup' %}">Login</a></center></p>
+                <p id="signup-link"><center>Already have an account? <a href="{% url 'loginpage' %}">Login</a></center></p>
                 
             </form>
         </div>

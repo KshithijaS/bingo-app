@@ -15,7 +15,7 @@ else if(checkUrlStr("choice") || checkUrlStr("invite")) {
     alink.textContent = "Profile";
 }
 else if(checkUrlStr("myprofile")) {
-    alink.setAttribute("href", "#");
+    alink.setAttribute("href", "{% url 'logoutUser' %}");
     alink.textContent = "Logout";
 }
 
