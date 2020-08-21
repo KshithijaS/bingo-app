@@ -53,7 +53,12 @@ def invite(request):
 
 
 def profile(request):
-    context = {}
+    # totalScore = request.user.players.total_score
+    # matches = request.user.players.matches_set.all()
+    context = {
+        # 'totalScore' : totalScore,
+        # 'matches' : matches,
+    }
     return render(request, 'main/profile.html', context)
 
 
