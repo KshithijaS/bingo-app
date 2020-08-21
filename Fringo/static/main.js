@@ -10,14 +10,6 @@ let alink = secondNavBar.firstElementChild;
 if(checkUrlStr("login") || checkUrlStr("signup")) {
     secondNavBar.removeChild(alink);
 }
-else if(checkUrlStr("choice") || checkUrlStr("invite")) {
-    alink.setAttribute("href", "{% url 'profile.html' %}");
-    alink.textContent = "Profile";
-}
-else if(checkUrlStr("myprofile")) {
-    alink.setAttribute("href", "{% url 'logoutUser' %}");
-    alink.textContent = "Logout";
-}
 
 
 // -----Invite Page-----

@@ -32,7 +32,7 @@ def signup(request):
     if request.method == 'POST':
         form=CreateUserForm(request.POST)
         if form.is_valid():
-            User=form.save()
+            User = form.save()
             return redirect('choice')
 
     context={'form':form}
@@ -40,7 +40,7 @@ def signup(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('loginpage')
     
 def choice(request):
     context = {}
