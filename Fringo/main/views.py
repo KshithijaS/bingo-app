@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import CreateUserForm
+from django.contrib.auth.decorators import login_required
+from .decorators import unauthenticated_user
 
 # Create your views here.
 
@@ -11,7 +13,7 @@ def landing(request):
     context = {}
     return render(request, 'main/landing.html', context)
 
-
+@unauthenticated_user
 def loginpage(request):
     if request.method =='POST':
         username=request.POST.get('username')
@@ -41,22 +43,27 @@ def signup(request):
 def logoutUser(request):
     logout(request)
     return redirect('loginpage')
-    
+
+def user(request):
+    context = {}
+    return render(request, 'main/user.html', context)
+
+@login_required(login_url='loginpage')
 def choice(request):
     context = {}
     return render(request, 'main/choice.html', context)
 
-
+@login_required(login_url='loginpage')
 def invite(request):
     context = {}
     return render(request, 'main/invite.html', context)
 
-
+@login_required(login_url='loginpage')
 def profile(request):
     context = {}
     return render(request, 'main/profile.html', context)
 
-
+@login_required(login_url='loginpage')
 def game(request):
     context = {}
     return render(request, 'main/game.html', context)
