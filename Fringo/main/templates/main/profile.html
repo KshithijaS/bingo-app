@@ -12,7 +12,7 @@
           <div class="container">
             <div class="picture-container">
                 <div class="picture">
-                    <img src="{% static 'images/profile-icon.jpg' %}" class="picture-src" id="wizardPicturePreview" title="">
+                    <img src="{{ request.user.player.profile_pic.url }}" class="picture-src" id="wizardPicturePreview" title="">
                     <input type="file" id="wizard-picture" class="">
                 </div>
             </div>
