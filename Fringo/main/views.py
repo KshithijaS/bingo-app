@@ -60,7 +60,8 @@ def invite(request):
 
 @login_required(login_url='loginpage')
 def profile(request):
-    context = {}
+    user = request.user
+    context = {'user' : user}
     return render(request, 'main/profile.html', context)
 
 @login_required(login_url='loginpage')

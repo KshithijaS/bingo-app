@@ -1,22 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
+
 
 # Create your models here.
 
 class Player(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(null=True, blank=True)
-    total_score = models.IntegerField(null=True)
+    profile_pic = models.ImageField(default='profile.png',null=True, blank=True)
+    total_score = models.IntegerField(default=0, null=True)
 
-    # def __str__(self):
-    #     return self.user.username
+    def __str__(self):
+        return str(self.user.username)
 
-# def create_playerProfile(sender, **kwargs):
-#     if kwargs['created']:
-#         player_profile = Player.objects.create(user=kwargs['instance'])
-
-# post_save.connect(create_playerProfile, sender=User)
 
 class Matches(models.Model):
     players = models.ManyToManyField(Player)

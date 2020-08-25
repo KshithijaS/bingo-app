@@ -12,14 +12,14 @@
           <div class="container">
             <div class="picture-container">
                 <div class="picture">
-                    <img src="{{ request.user.player.profile_pic.url }}" class="picture-src" id="wizardPicturePreview" title="">
+                    <img src="{{ user.player.profile_pic.url }}" class="picture-src" id="wizardPicturePreview" title="">
                     <input type="file" id="wizard-picture" class="">
                 </div>
             </div>
           </div>
-          <p class="basic-info" allign="justify-content-center">Username</p>
+          <p class="basic-info" allign="justify-content-center">{{user}}</p>
           <br>
-          <p class="basic-inf-scoreo" allign="justify-content-center">Total-Score: 12320</p>
+          <p class="basic-inf-scoreo" allign="justify-content-center">Total-Score: {{user.player.total_score}}</p>
         </div>
         <div class="col-md-8" id="achievements">
           <div class="row align-items-center justify-content-center">
