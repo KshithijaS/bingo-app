@@ -333,8 +333,9 @@ header{
 .play-btn {
     position: relative;
     top: 20%;
-    left: 60%;
-    width: 500px;
+    text-align: center;
+    left:35%;
+    width: 400px;
 }
 
 .profile-box {
@@ -432,29 +433,6 @@ header{
 .picture:hover{
     border-color: #950740;
 }
-.content.ct-wizard-green .picture:hover{
-    border-color: #05ae0e;
-}
-.content.ct-wizard-blue .picture:hover{
-    border-color: #3472f7;
-}
-.content.ct-wizard-orange .picture:hover{
-    border-color: #ff9500;
-}
-.content.ct-wizard-red .picture:hover{
-    border-color: #ff3b30;
-}
-.picture input[type="file"] {
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0 !important;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
 .picture-src{
     width: 100%;
     

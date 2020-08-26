@@ -5,7 +5,7 @@ from django.contrib import messages
 from .forms import CreateUserForm
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
-
+from .models import Player,Matches
 # Create your views here.
 
 

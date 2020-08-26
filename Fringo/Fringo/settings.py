@@ -129,7 +129,6 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 # media root
 MEDIA_URL = '/images/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 #smtp Configuration
