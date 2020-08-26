@@ -23,6 +23,16 @@
             <li class="nav-item item-1">
               <a class="nav-link active" id="nav-members" href="{% url 'landing' %}">Home</a>
             </li>
+            {% if request.user.is_authenticated %}
+              {% if request.get_full_path == "/myprofile/" %}
+                <li class="nav-item item-1">
+                  <a class="nav-link active" id="nav-members" href="{% url 'choice' %}">Play Now!</a>
+                </li>
+                <li class="nav-item item-1">
+                  <a class="nav-link active" id="nav-members" href="{% url 'editProfile' %}">Edit Profile</a>
+                </li>
+              {% endif %}
+            {% endif %}
             <li class="nav-item item-2">
               {% if request.user.is_authenticated %}
                   {% if request.get_full_path == "/choice/" or request.get_full_path == "/invite/" %}

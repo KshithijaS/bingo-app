@@ -8,6 +8,10 @@ class Player(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     profile_pic = models.ImageField(default='profile.png',null=True, blank=True)
     total_score = models.IntegerField(default=0, null=True)
+    matches_played = models.IntegerField(default=0, null=True)
+    win_count = models.IntegerField(default=0, null=True)
+    loss_count = models.IntegerField(default=0, null=True)
+    draw_count = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return str(self.user.username)

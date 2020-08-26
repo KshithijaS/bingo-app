@@ -2,9 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="play-btn">
-      <a href="{% url 'choice' %}" alt="Play-now"><button type="button" class="btn btn-md rounded-pill" id="custom-btn">Play Now!</button></a>
-    </div>
+    
     <!--Profile-->
     <div class="row justify-content-center profile-box img-fluid">
         <div class="col-md-4" id="user-info">
@@ -32,10 +30,10 @@
           <br>
             
           <div class="tab-content show" id="progress-content">
-            <span class="underline"><p>Matches Played: 100</p></span>
-            <span class="underline"><p>Wins: 80</p></span>
-            <span class="underline"><p>Lost: 15</p></span>
-            <span class="underline"><p>Draw: 8</p></span>
+            <span class="underline"><p>Matches Played: {{user.player.matches_played}}</p></span>
+            <span class="underline"><p>Wins: {{user.player.win_count}}</p></span>
+            <span class="underline"><p>Lost: {{user.player.loss_count}}</p></span>
+            <span class="underline"><p>Draw: {{user.player.draw_count}}</p></span>
           </div>
           <div class="tab-content" id="matches-content">
             <span class="underline">
