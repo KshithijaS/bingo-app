@@ -44,6 +44,15 @@
                 <a class="nav-link active" id="nav-members" href="{% url 'loginpage' %}">Login/Sign-up</a>
               {% endif %}
             </li>
+            <li class="nav-item item-3">
+              {% if request.user.is_authenticated %}
+              {% if request.get_full_path == "/editMyProfile/" %}
+                <li class="nav-item item-1">
+                  <a class="nav-link active" id="nav-members" href="{% url 'profile' %}">Profile</a>
+                </li>
+              {% endif %}
+            {% endif %}
+            </li>
           </ul>
         </nav>
         <br><br><br>
