@@ -88,6 +88,11 @@ def editProfile(request):
     return render(request, 'main/edit_profile.html', context)
 
 @login_required(login_url='loginpage')
+def createCard(request):
+    context = {}
+    return render(request, 'main/create_card.html', context)
+
+@login_required(login_url='loginpage')
 def game(request):
     context = {}
     return render(request, 'main/game.html', context)

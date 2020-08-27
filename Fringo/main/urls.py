@@ -12,6 +12,7 @@ urlpatterns = [
     path('invite/', views.invite, name="invite"),
     path('myprofile/', views.profile, name="profile"),
     path('editMyProfile/', views.editProfile, name="editProfile"),
+    path('createCard/', views.createCard, name="createCard"),
     path('game/', views.game, name="game"),
     
     path('resetPassword/', auth_views.PasswordResetView.as_view(template_name="main/password_reset.html"), name="reset_password"),
