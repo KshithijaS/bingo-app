@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import CreateUserForm, PlayerForm
+from .forms import CreateUserForm, UserUpdateForm, PlayerUpdateForm
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
 from .models import Player,Matches
@@ -66,12 +66,25 @@ def profile(request):
 
 @login_required(login_url='loginpage')
 def editProfile(request):
-    player=request.user.player
-    form=PlayerForm(instance=player)
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-    context = {'form':form}
+    if request.method == 'POST':
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        player_form = PlayerUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.player)
+        if user_form.is_valid() and player_form.is_valid():
+            user_form.save()
+            player_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+
+    else:
+        user_form = UserUpdateForm(instance=request.user)
+        player_form = PlayerUpdateForm(instance=request.user.player)
+
+    context = {
+        'user_form': user_form,
+        'player_form': player_form,
+    }
     return render(request, 'main/edit_profile.html', context)
 
 @login_required(login_url='loginpage')

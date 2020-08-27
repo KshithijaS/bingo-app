@@ -1,5 +1,6 @@
 {% extends 'main/main.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
     
     <!--EditProfile-->
@@ -21,7 +22,8 @@
           <br>
           <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
-            {{form.as_p}}
+            {{user_form|crispy}}
+            {{player_form|crispy}}
             <input class="btn btn-md rounded-pill" id="custom-btn" type="submit" name="Update Information">
           </form>
         </div>
