@@ -481,6 +481,40 @@ header{
     text-align: center;
   }
 
+#striked-number {
+    height: 20vh;
+    background: #FFC37B;
+    color: #fff;
+    border: none;
+}
+
+#bingo-block {
+    border: 2px solid #000;
+    background-color: #fff;
+
+}
+
+.bingo-square {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.circle {
+    margin-top: 3rem;
+    background: #C3073F;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+#latest-number .h1{
+    position: relative;
+    top: 20%;
+    left: 20%;
+    color: #FFAE7E;
+    font-weight: bolder;
+}
+
 /* Media Queries */
 
 /* @media (min-width: 950px) {

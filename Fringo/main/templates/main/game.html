@@ -2,50 +2,92 @@
 {% load static %}
 
 {% block content %}
-    <div class="container d-flex flex-row justify-content-center align-items-center">
-        <div class="col-lg">
-            <div class="container pt-3">
-                <table>
-                    <tr>
-                        <td class="square">1</td>
-                        <td class="square">2</td>
-                        <td class="square">3</td>
-                        <td class="square">4</td>
-                        <td class="square">5</td>
-                    </tr>
-                    <tr>
-                        <td class="square">6</td>
-                        <td class="square">7</td>
-                        <td class="square">8</td>
-                        <td class="square">9</td>
-                        <td class="square">10</td>
-                    </tr>
-                    <tr>
-                        <td class="square">11</td>
-                        <td class="square">12</td>
-                        <td class="square">13</td>
-                        <td class="square">14</td>
-                        <td class="square">15</td>
-                    </tr>
-                    <tr>
-                        <td class="square">16</td>
-                        <td class="square">17</td>
-                        <td class="square">18</td>
-                        <td class="square">19</td>
-                        <td class="square">20</td>
-                    </tr>
-                    <tr>
-                        <td class="square">21</td>
-                        <td class="square">22</td>
-                        <td class="square">23</td>
-                        <td class="square">24</td>
-                        <td class="square">25</td>
-                    </tr>
-                </table>
+    <h1 class="signup-title">shdghu's Turn</h1>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-6 container">
+                    <table class="text-center">
+                        <tr>
+                            <td class="square">1</td>
+                            <td class="square">2</td>
+                            <td class="square">3</td>
+                            <td class="square">4</td>
+                            <td class="square">5</td>
+                        </tr>
+                        <tr>
+                            <td class="square">6</td>
+                            <td class="square">7</td>
+                            <td class="square">8</td>
+                            <td class="square">9</td>
+                            <td class="square">10</td>
+                        </tr>
+                        <tr>
+                            <td class="square">11</td>
+                            <td class="square">12</td>
+                            <td class="square">13</td>
+                            <td class="square">14</td>
+                            <td class="square">15</td>
+                        </tr>
+                        <tr>
+                            <td class="square">16</td>
+                            <td class="square">17</td>
+                            <td class="square">18</td>
+                            <td class="square">19</td>
+                            <td class="square">20</td>
+                        </tr>
+                        <tr>
+                            <td class="square">21</td>
+                            <td class="square">22</td>
+                            <td class="square">23</td>
+                            <td class="square">24</td>
+                            <td class="square">25</td>
+                        </tr>
+                    </table>
             </div>
-        </div>
-        <div class="col-lg">
-            
+            <div class="col-6">
+                <div class="container">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="container" id="striked-number">
+                            <div class="row justify-content-center align-items-center pt-3">
+                                <div class="col-3 square">
+                                    <p>25</p>
+                                </div>
+                                <div class="col-3 square">
+                                    <p>3</p>
+                                </div>
+                                <div class="col-3 square">
+                                    <p>8</p>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="display-block" id="bingo-block">
+                            <div class="container">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-2 bingo-square">
+                                        <p>B</p>
+                                    </div>
+                                    <div class="col-2 bingo-square">
+                                        <p>I</p>
+                                    </div>
+                                    <div class="col-2 bingo-square">
+                                        <p>N</p>
+                                    </div>
+                                    <div class="col-2 bingo-square">
+                                        <p>G</p>
+                                    </div>
+                                    <div class="col-2 bingo-square">
+                                        <p>O</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="circle" id="latest-number">
+                            <div class="h1">25</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock content %}
