@@ -1,1 +1,62 @@
-<!--Namrita-->
+{% extends 'main/game_main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container d-flex flex-row justify-content-center align-items-center">
+        <div class="col-lg ">
+            <div class="container pt-3">
+                <table>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg align-self-center">
+                <h3 id="demo1"></h3>
+
+        </div>
+    </div>
+    <script>
+        function display(startno,endno) {
+            var text=""
+            var i;
+            for (i = startno; i < endno+1; i++) {
+                text += i + "   ";
+            }
+            document.getElementById("demo1").innerHTML = text;
+        }
+    </script>
+{% endblock content %}
