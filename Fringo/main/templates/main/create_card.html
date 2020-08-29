@@ -45,18 +45,13 @@
             </div>
         </div>
         <div class="col-lg align-self-center">
-                <h3 id="demo1"></h3>
+                <div class="drag-op">
+                    
+                </div>
 
         </div>
     </div>
-    <script>
-        function display(startno,endno) {
-            var text=""
-            var i;
-            for (i = startno; i < endno+1; i++) {
-                text += i + "   ";
-            }
-            document.getElementById("demo1").innerHTML = text;
-        }
-    </script>
+     <!-- Javascript -->
+     <script src="{% static 'main.js' %}"></script>
+
 {% endblock content %}
