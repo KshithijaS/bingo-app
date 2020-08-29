@@ -1,1 +1,57 @@
-<!--Namrita-->
+{% extends 'main/game_main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container d-flex flex-row justify-content-center align-items-center">
+        <div class="col-lg ">
+            <div class="container pt-3">
+                <table>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                    <tr>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                        <td class="square"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg align-self-center">
+                <div class="drag-op">
+                    
+                </div>
+
+        </div>
+    </div>
+     <!-- Javascript -->
+     <script src="{% static 'main.js' %}"></script>
+
+{% endblock content %}

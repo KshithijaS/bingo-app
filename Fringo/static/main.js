@@ -46,3 +46,23 @@ function deselectTab() {
 }
 
 tabItems.forEach(item => item.addEventListener('click', selectItem));
+
+/* Create Card */
+function display(startno,endno) {
+     let numberBlock= document.querySelector('.drag-op');
+     let i=startno;
+     while(i<=endno){
+         let newRow=document.createElement('div');
+         newRow.className='d-flex flex-row';
+         numberBlock.appendChild(newRow);
+
+         for(var j=0;j<5;j++){
+             let rowItem=document.createElement('div');
+             rowItem.className='square';
+             rowItem.innerHTML=i;
+             newRow.appendChild(rowItem);
+         }
+     }
+}
+
+

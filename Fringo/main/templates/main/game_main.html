@@ -27,6 +27,22 @@
                 <li>
                   <a class="nav-link active" id="nav-members" href="{% url 'logoutUser' %}">Logout</a>
                 </li>
+                {% if request.get_full_path == "/createCard/" %}
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" style="color:#FFAE7E;" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose your Range!
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop">
+                        <a class="dropdown-item" onclick="display(1,25)" >1-25</a>
+                        <a class="dropdown-item" onclick="display(26,50)">26-50</a>
+                        <a class="dropdown-item" onclick="display(51,75)">51-75</a>
+                        <a class="dropdown-item" onclick="display(76,100)">76-100</a>
+                        <a class="dropdown-item" onclick="display(101,125)">101-125</a>
+                        <a class="dropdown-item" onclick="display(126,150)">126-150</a>
+                        <a class="dropdown-item" onclick="display(151,175)">151-175</a>
+                        <a class="dropdown-item" onclick="display(176,200)">176-200</a>
+                      </div>
+                    <li>
+                {% endif %}
               </ul>
           </nav>
           <br><br><br>
