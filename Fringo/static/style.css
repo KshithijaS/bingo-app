@@ -482,7 +482,7 @@ header{
   }
 
 #striked-number {
-    height: 20vh;
+    height: 22vh;
     background: #FFC37B;
     color: #fff;
     border: none;
@@ -491,13 +491,22 @@ header{
 #bingo-block {
     border: 2px solid #000;
     background-color: #fff;
-
 }
 
 .bingo-square {
     font-weight: bold;
     font-size: 30px;
 }
+
+#b { color: #9400D3; }
+
+#i { color: #4B0082; }
+
+#n { color: #0000FF; }
+
+#g { color: #00FF00; }
+
+#o { color: #FF7F00; }
 
 .circle {
     margin-top: 3rem;
