@@ -49,20 +49,48 @@ tabItems.forEach(item => item.addEventListener('click', selectItem));
 
 /* Create Card */
 
+let board = [["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],]
+
+if(checkUrlStr("createCard") || checkUrlStr("game")) {
+    createBoard();
+    dragNDrop();
+}
+
+function createBoard() {
+    const boardDiv = document.querySelector('#game-board');
+    for(var i = 0; i < 5; i++){
+        const newRow = document.createElement('div');
+        newRow.className = 'd-flex flex-row';
+        boardDiv.appendChild(newRow);
+
+        for(var j = 0; j < 5; j++) {
+            const rowItem = document.createElement('div');
+            rowItem.className = 'empty';
+            rowItem.innerHTML = board[i][j];
+            newRow.appendChild(rowItem);
+        }
+    }
+}
+
 function display(start_no, end_no) {
-    let numberBlock = document.querySelector('.drag-op');
+    const numberBlock = document.querySelector('.drag-op');
     while (numberBlock.firstChild) {
         numberBlock.removeChild(numberBlock.firstChild);
     }
     let i = start_no;
     while(i <= end_no) {
-        let newRow = document.createElement('div');
+        const newRow = document.createElement('div');
         newRow.className = 'd-flex flex-row';
         numberBlock.appendChild(newRow);
 
         for(var j = 0; j < 5; j++) {
-            let rowItem=document.createElement('div');
-            rowItem.className = 'square';
+            const rowItem = document.createElement('div');
+            rowItem.className = 'fill';
+            rowItem.setAttribute('draggable', 'true');
             rowItem.innerHTML = i;
             newRow.appendChild(rowItem);
             i++;
@@ -70,4 +98,58 @@ function display(start_no, end_no) {
     }
 }
 
+function dragNDrop() {
 
+    const filled = document.querySelectorAll('.fill');
+    const empties = document.querySelectorAll('.empty');
+    //fill listener
+    for (const fill of filled) {
+        fill.addEventListener('dragstart', dragStart);
+        fill.addEventListener('dragend', dragEnd);
+    }
+
+    // Loop through the empties
+    for(const empty of empties) {
+        empty.addEventListener('dragover', dragOver);
+        empty.addEventListener('dragenter', dragEnter);
+        empty.addEventListener('dragleave', dragLeave);
+        empty.addEventListener('drop', dragDrop);
+    }
+
+    //Drag functions
+
+    function dragStart() {
+        setTimeout(() => this.className = 'invisible', 0);
+    }
+
+    function dragEnd() {
+        this.classList.remove('empty')
+        this.classList.add('fill')
+    }
+
+    function dragOver(e) {
+        e.preventDefault();
+    }
+
+    function dragEnter(e) {
+        e.preventDefault();
+        this.classList.add('hovered');
+    }
+
+    function dragLeave() {
+        this.classList.remove('hovered');
+        if(this.classList.contains('fill')) {
+            this.classList.remove('empty');
+        }
+        else {
+            this.classList.add('empty');
+        }
+    }
+
+    function dragDrop(event) {
+        this.classList.remove('empty');
+        this.classList.remove('hovered');
+        this.classList.add('fill');
+        this.innerHTML = event.innerHTML;
+    }
+}

@@ -23,3 +23,5 @@ class Matches(models.Model):
     win = models.CharField(max_length=200, null=True, blank=True)
     loss = models.CharField(max_length=200, null=True, blank=True)
     draw = models.BooleanField(null=True)
+
+    
