@@ -55,6 +55,10 @@ let board = [["", "", "", "", ""],
              ["", "", "", "", ""],
              ["", "", "", "", ""],]
 
+// if(!board.some(row => row.includes(""))) {
+//     console.log("Proceed");
+// }
+
 if(checkUrlStr("createCard") || checkUrlStr("game")) {
     createBoard();
     dragNDrop();
