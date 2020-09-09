@@ -93,6 +93,7 @@ function display(start_no, end_no) {
 
         for(var j = 0; j < 5; j++) {
             const rowItem = document.createElement('div');
+            rowItem.id="" + i;
             rowItem.className = 'fill';
             rowItem.setAttribute('draggable', 'true');
             rowItem.innerHTML = i;
@@ -128,7 +129,7 @@ function dragNDrop() {
 
     function dragEnd() {
         this.classList.remove('empty')
-        this.classList.add('fill')
+        this.classList.add('fill-place')
     }
 
     function dragOver(e) {
@@ -142,7 +143,7 @@ function dragNDrop() {
 
     function dragLeave() {
         this.classList.remove('hovered');
-        if(this.classList.contains('fill')) {
+        if(this.classList.contains('fill-place')) {
             this.classList.remove('empty');
         }
         else {
@@ -153,7 +154,25 @@ function dragNDrop() {
     function dragDrop(event) {
         this.classList.remove('empty');
         this.classList.remove('hovered');
-        this.classList.add('fill');
-        this.innerHTML = event.innerHTML;
+        this.classList.add('fill-place');
+        this.innerHTML = document.getElementById(event.target.id).value;
+        
     }
 }
+/*
+function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+    document.getElementById("demo").innerHTML = "Started to drag the p element";
+  }
+  
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+  
+  function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "The p element was dropped";
+  }
+*/
