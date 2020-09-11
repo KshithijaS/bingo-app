@@ -74,6 +74,8 @@ function createBoard() {
         for(var j = 0; j < 5; j++) {
             const rowItem = document.createElement('div');
             rowItem.className = 'empty';
+            rowItem.setAttribute('ondrop', 'drop(event)');
+            rowItem.setAttribute('ondragover', 'allowDrop(event)');
             rowItem.innerHTML = board[i][j];
             newRow.appendChild(rowItem);
         }
@@ -93,9 +95,10 @@ function display(start_no, end_no) {
 
         for(var j = 0; j < 5; j++) {
             const rowItem = document.createElement('div');
-            rowItem.id="" + i;
+            rowItem.id = `${i}`; 
             rowItem.className = 'fill';
             rowItem.setAttribute('draggable', 'true');
+            rowItem.setAttribute('ondragstart', 'drag(event)');
             rowItem.innerHTML = i;
             newRow.appendChild(rowItem);
             i++;
@@ -103,76 +106,18 @@ function display(start_no, end_no) {
     }
 }
 
-function dragNDrop() {
 
-    const filled = document.querySelectorAll('.fill');
-    const empties = document.querySelectorAll('.empty');
-    //fill listener
-    for (const fill of filled) {
-        fill.addEventListener('dragstart', dragStart);
-        fill.addEventListener('dragend', dragEnd);
-    }
-
-    // Loop through the empties
-    for(const empty of empties) {
-        empty.addEventListener('dragover', dragOver);
-        empty.addEventListener('dragenter', dragEnter);
-        empty.addEventListener('dragleave', dragLeave);
-        empty.addEventListener('drop', dragDrop);
-    }
-
-    //Drag functions
-
-    function dragStart() {
-        setTimeout(() => this.className = 'invisible', 0);
-    }
-
-    function dragEnd() {
-        this.classList.remove('empty')
-        this.classList.add('fill-place')
-    }
-
-    function dragOver(e) {
-        e.preventDefault();
-    }
-
-    function dragEnter(e) {
-        e.preventDefault();
-        this.classList.add('hovered');
-    }
-
-    function dragLeave() {
-        this.classList.remove('hovered');
-        if(this.classList.contains('fill-place')) {
-            this.classList.remove('empty');
-        }
-        else {
-            this.classList.add('empty');
-        }
-    }
-
-    function dragDrop(event) {
-        this.classList.remove('empty');
-        this.classList.remove('hovered');
-        this.classList.add('fill-place');
-        this.innerHTML = document.getElementById(event.target.id).value;
-        
-    }
+function allowDrop(ev) {
+  ev.preventDefault();
 }
-/*
-function dragStart(event) {
-    event.dataTransfer.setData("Text", event.target.id);
-    document.getElementById("demo").innerHTML = "Started to drag the p element";
-  }
-  
-  function allowDrop(event) {
-    event.preventDefault();
-  }
-  
-  function drop(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("Text");
-    event.target.appendChild(document.getElementById(data));
-    document.getElementById("demo").innerHTML = "The p element was dropped";
-  }
-*/
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  this.className = 'fill-place';
+}

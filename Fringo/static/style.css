@@ -476,26 +476,14 @@ header{
     font-family: 'Lobster',cursive;
 }
 
-.fill-place {
-    display: inline-block;
-	height: 75px;
-    width: 75px;
-    background-color: #950740;
-    color: #fff;
-    font-size: 2rem;
-    border: 4px solid #FFFFFF;
-    text-align: center;
-	cursor: pointer;	
-}
-
 .fill {
     display: inline-block;
 	height: 45px;
     width: 45px;
-    background-color: #FFAE7E;
-    color: #950740;
-    font-size: 1.5rem;
+    background-color: #950740;
+    color: #fff;
     border: 2px solid #950740;
+    font-size: 1.5rem;
     text-align: center;
 	cursor: pointer;	
 }
@@ -509,15 +497,9 @@ header{
     border: 4px solid #FFFFFF;
 }
 
-
 .hovered {
     opacity: 50%;
 }
-
-.invisble {
-    display: none;
-}
-
 
   /* create_card */
 
