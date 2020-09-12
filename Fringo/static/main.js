@@ -61,7 +61,6 @@ let board = [["", "", "", "", ""],
 
 if(checkUrlStr("createCard") || checkUrlStr("game")) {
     createBoard();
-    dragNDrop();
 }
 
 function createBoard() {
@@ -69,11 +68,13 @@ function createBoard() {
     for(var i = 0; i < 5; i++){
         const newRow = document.createElement('div');
         newRow.className = 'd-flex flex-row';
+        newRow.id = `${i}`;
         boardDiv.appendChild(newRow);
 
         for(var j = 0; j < 5; j++) {
             const rowItem = document.createElement('div');
             rowItem.className = 'empty';
+            rowItem.id = `${j}`;
             rowItem.setAttribute('ondrop', 'drop(event)');
             rowItem.setAttribute('ondragover', 'allowDrop(event)');
             rowItem.innerHTML = board[i][j];
@@ -119,5 +120,9 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
-  this.className = 'fill-place';
+  var parentId = ev.target.parentNode.id;
+  var currentId = ev.target.id;
+  board[parentId][currentId] = data;
 }
+
+console.log(board);
