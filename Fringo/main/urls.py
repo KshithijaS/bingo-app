@@ -12,6 +12,7 @@ urlpatterns = [
     path('invite/', views.invite, name="invite"),
     path('myprofile/', views.profile, name="profile"),
     path('editMyProfile/', views.editProfile, name="editProfile"),
+    path('compCreateCard/', views.compCreateCard, name="compCreateCard"),
     path('createCard/', views.createCard, name="createCard"),
     path('game/', views.game, name="game"),
     

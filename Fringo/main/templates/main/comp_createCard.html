@@ -1,0 +1,24 @@
+{% extends 'main/game_main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container d-flex flex-row justify-content-center align-items-center">
+        <div class="col-lg-6">
+            <div class="container pt-3" id="game-board">
+                
+            </div>
+        </div>
+        <div class="col-lg-6 align-self-center">
+            <div class="container">
+                <div class="d-flex flex-column">
+                    <a id="proceed-btn" alt="Proceed">
+                        <button type="button" class="btn btn-md rounded-pill" id="custom-btn">Proceed</button>
+                    </a>
+                    <a id="proceed-btn" alt="Proceed">
+                        <button type="button" class="btn btn-md" id="custom-btn">Generate A New Card</button>
+                    </a>  
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

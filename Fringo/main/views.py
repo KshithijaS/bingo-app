@@ -92,6 +92,12 @@ def createCard(request):
     context = {}
     return render(request, 'main/create_card.html', context)
 
+
+@login_required(login_url='loginpage')
+def compCreateCard(request):
+    context = {}
+    return render(request, 'main/comp_createCard.html', context)
+
 @login_required(login_url='loginpage')
 def game(request):
     context = {}
