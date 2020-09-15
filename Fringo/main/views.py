@@ -6,6 +6,7 @@ from .forms import CreateUserForm, UserUpdateForm, PlayerUpdateForm
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
 from .models import Player,Matches
+import random
 # Create your views here.
 
 
@@ -102,3 +103,5 @@ def compCreateCard(request):
 def game(request):
     context = {}
     return render(request, 'main/game.html', context)
+
+
