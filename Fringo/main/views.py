@@ -6,8 +6,8 @@ from .forms import CreateUserForm, UserUpdateForm, PlayerUpdateForm
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
 from .models import Player,Matches
-# Create your views here.
 
+# Create your views here.
 
 def landing(request):
     context = {}

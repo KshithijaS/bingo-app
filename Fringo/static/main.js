@@ -49,11 +49,11 @@ tabItems.forEach(item => item.addEventListener('click', selectItem));
 
 /* Create Card */
 
-let board = [["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],]
+// let board = [["", "", "", "", ""],
+//              ["", "", "", "", ""],
+//              ["", "", "", "", ""],
+//              ["", "", "", "", ""],
+//              ["", "", "", "", ""],]
 
 // if(!board.some(row => row.includes(""))) {
 //     console.log("Proceed");
@@ -78,7 +78,7 @@ function createBoard() {
             rowItem.id = `${j}`;
             rowItem.setAttribute('ondrop', 'drop(event)');
             rowItem.setAttribute('ondragover', 'allowDrop(event)');
-            rowItem.innerHTML = board[i][j];
+            // rowItem.innerHTML = board[i][j];
             newRow.appendChild(rowItem);
         }
     }

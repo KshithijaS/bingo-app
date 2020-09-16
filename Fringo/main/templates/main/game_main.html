@@ -27,7 +27,7 @@
                 <li>
                   <a class="nav-link active" id="nav-members" href="{% url 'logoutUser' %}">Logout</a>
                 </li>
-                {% if request.get_full_path == "/createCard/" %}
+                {% if request.get_full_path == "/createCard/" or request.get_full_path == "/compCreateCard/" %}
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" style="color:#FFAE7E;" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Choose your Range!
