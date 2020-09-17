@@ -104,7 +104,7 @@ function initAll() {
 }
 
 function newCard() {
-  for(var i = 0 ; i < 25 ; i++){
+  for(var i = 0 ; i < 24 ; i++){
       setSquare(i);
     }
 }
