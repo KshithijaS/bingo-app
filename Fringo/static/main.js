@@ -49,42 +49,22 @@ tabItems.forEach(item => item.addEventListener('click', selectItem));
 
 
 
-let board = [["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],
-             ["", "", "", "", ""],]
-/* Create Card 
-
-// if(!board.some(row => row.includes(""))) {
-//     console.log("Proceed");
-// }
-
-if(checkUrlStr("createCard") || checkUrlStr("game") || checkUrlStr("compCreateCard")) {
-    createBoard();
-}
+let user_board = [["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],]
+                  
+let comp_board = [["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],]  
 
 
-function createBoard() {
-    const boardDiv = document.querySelector('#game-board');
-    for(var i = 0; i < 5; i++){
-        const newRow = document.createElement('div');
-        newRow.className = 'd-flex flex-row';
-        newRow.id = `${i}`;
-        boardDiv.appendChild(newRow);
 
-        for(var j = 0; j < 5; j++) {
-            const rowItem = document.createElement('div');
-            rowItem.className = 'empty';
-            rowItem.id = `${j}`;
-            rowItem.setAttribute('ondrop', 'drop(event)');
-            rowItem.setAttribute('ondragover', 'allowDrop(event)');
-            rowItem.innerHTML = board[i][j];
-            newRow.appendChild(rowItem);
-        }
-    }
-}
 
+/*
 function display(start_no, end_no) {
     const numberBlock = document.querySelector('.drag-op');
     while (numberBlock.firstChild) {
@@ -124,7 +104,7 @@ function initAll() {
 }
 
 function newCard() {
-  for(var i=0 ; i<24 ; i++){
+  for(var i = 0 ; i < 25 ; i++){
       setSquare(i);
     }
 }
@@ -141,6 +121,7 @@ function setSquare(thisSquare){
   
   usedNums[newNum] = true;
   document.getElementById(currentSquare).innerHTML = newNum;
+  user_board[Math.floor(thisSquare / 5)][thisSquare % 5] = newNum;
 }
 
 function getNewNum() {
@@ -156,28 +137,53 @@ function anotherCard() {
   return false;
 }
 
-/* Drag and Drop */
-function allowDrop(ev) {
-  ev.preventDefault();
+console.log(user_board);
+
+if(checkUrlStr("game")) {
+  createBoard(user_board);
 }
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
+
+function createBoard(user_board) {
+  const boardDiv = document.querySelector('#game-board');
+  for(var i = 0; i < 5; i++){
+      const newRow = document.createElement('div');
+      newRow.className = 'd-flex flex-row';
+      newRow.id = `${i}`;
+      boardDiv.appendChild(newRow);
+
+      for(var j = 0; j < 5; j++) {
+          const rowItem = document.createElement('div');
+          rowItem.className = 'empty';
+          rowItem.id = `${j}`;
+          rowItem.setAttribute('ondrop', 'drop(event)');
+          rowItem.setAttribute('ondragover', 'allowDrop(event)');
+          rowItem.innerHTML = user_board[i][j];
+          newRow.appendChild(rowItem);
+      }
+  }
 }
 
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-//   ev.target.appendChild(document.getElementById(data));
-  ev.target.innerHTML = data;
-  var parentId = ev.target.parentNode.id;
-  var currentId = ev.target.id;
-  board[parentId][currentId] = data;
-}
+// /* Drag and Drop */
+// function allowDrop(ev) {
+//   ev.preventDefault();
+// }
 
-console.log(board);
+// function drag(ev) {
+//   ev.dataTransfer.setData("text", ev.target.id);
+// }
 
-if (board !== "") {
-    const proceed = document.getElementById('proceed-btn');
-    proceed.setAttribute("href", "{% url 'game' %}");
-}
+// function drop(ev) {
+//   ev.preventDefault();
+//   var data = ev.dataTransfer.getData("text");
+// //   ev.target.appendChild(document.getElementById(data));
+//   ev.target.innerHTML = data;
+//   var parentId = ev.target.parentNode.id;
+//   var currentId = ev.target.id;
+//   board[parentId][currentId] = data;
+// }
+
+// if (board !== "") {
+//     const proceed = document.getElementById('proceed-btn');
+//     proceed.setAttribute("href", "{% url 'game' %}");
+// }
