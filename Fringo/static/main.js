@@ -47,13 +47,14 @@ function deselectTab() {
 
 tabItems.forEach(item => item.addEventListener('click', selectItem));
 
-/* Create Card 
+
 
 let board = [["", "", "", "", ""],
              ["", "", "", "", ""],
              ["", "", "", "", ""],
              ["", "", "", "", ""],
              ["", "", "", "", ""],]
+/* Create Card 
 
 // if(!board.some(row => row.includes(""))) {
 //     console.log("Proceed");
@@ -108,6 +109,7 @@ function display(start_no, end_no) {
     }
 }
 */
+/* Auto Card Generation */
 window.onload = initAll;
 var usedNums = new Array(26);
 
@@ -154,6 +156,7 @@ function anotherCard() {
   return false;
 }
 
+/* Drag and Drop */
 function allowDrop(ev) {
   ev.preventDefault();
 }
