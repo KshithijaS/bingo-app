@@ -47,23 +47,6 @@ function deselectTab() {
 
 tabItems.forEach(item => item.addEventListener('click', selectItem));
 
-
-
-let user_board = [["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],]
-                  
-let comp_board = [["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],]  
-
-
-
-
 /*
 function display(start_no, end_no) {
     const numberBlock = document.querySelector('.drag-op');
@@ -90,6 +73,12 @@ function display(start_no, end_no) {
 }
 */
 /* Auto Card Generation */
+let user_board = [["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],
+                  ["", "", "", "", ""],]
+
 window.onload = initAll;
 var usedNums = new Array(26);
 
@@ -111,7 +100,7 @@ function newCard() {
 
 function setSquare(thisSquare){
   var currentSquare = "square" + thisSquare;
-  var colPlace = new Array(0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4,0,1,2,3,4);
+  var colPlace = new Array(3,1,4,0,3,2,0,4,1,2,0,3,2,1,4,2,1,3,0,1,4,3,0,2,4);
   var colBasis = colPlace[thisSquare] * 5;
   var newNum = colBasis + getNewNum() + 1;
 
@@ -139,30 +128,67 @@ function anotherCard() {
 
 console.log(user_board);
 
-if(checkUrlStr("game")) {
-  createBoard(user_board);
-}
+class Computer {
+  constructor() {
+    this.comp_board = [["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],]  
+  }
 
+  createBoard(){
+    var usedNums = new Array(26);
+    for (var i = 1; i < usedNums.length; i++) {
+          usedNums[i] = false;
+    }
+    for(var i = 0; i < 25; i++){
+      var colPlace = new Array(0,1,4,3,2,2,4,0,1,3,0,3,2,1,4,0,3,1,2,4,0,4,2,3,1);
+      var colBasis = colPlace[i] * 5;
+      var newNum = colBasis + this.getNewNum() + 1;
+    
+      do{
+        newNum = colBasis + this.getNewNum() + 1;
+      }while(usedNums[newNum]);
+      
+      usedNums[newNum] = true;
+      this.comp_board[Math.floor(i / 5)][i % 5] = newNum;
+    }
+  }
 
-function createBoard(user_board) {
-  const boardDiv = document.querySelector('#game-board');
-  for(var i = 0; i < 5; i++){
-      const newRow = document.createElement('div');
-      newRow.className = 'd-flex flex-row';
-      newRow.id = `${i}`;
-      boardDiv.appendChild(newRow);
-
-      for(var j = 0; j < 5; j++) {
-          const rowItem = document.createElement('div');
-          rowItem.className = 'empty';
-          rowItem.id = `${j}`;
-          rowItem.setAttribute('ondrop', 'drop(event)');
-          rowItem.setAttribute('ondragover', 'allowDrop(event)');
-          rowItem.innerHTML = user_board[i][j];
-          newRow.appendChild(rowItem);
-      }
+  getNewNum() {
+    return Math.floor(Math.random() * 5);
   }
 }
+
+const comp = new Computer();
+comp.createBoard();
+console.log(comp.comp_board);
+
+// if(checkUrlStr("game")) {
+//   createBoard(user_board);
+// }
+
+
+// function createBoard(user_board) {
+//   const boardDiv = document.querySelector('#game-board');
+//   for(var i = 0; i < 5; i++){
+//       const newRow = document.createElement('div');
+//       newRow.className = 'd-flex flex-row';
+//       newRow.id = `${i}`;
+//       boardDiv.appendChild(newRow);
+
+//       for(var j = 0; j < 5; j++) {
+//           const rowItem = document.createElement('div');
+//           rowItem.className = 'empty';
+//           rowItem.id = `${j}`;
+//           rowItem.setAttribute('ondrop', 'drop(event)');
+//           rowItem.setAttribute('ondragover', 'allowDrop(event)');
+//           rowItem.innerHTML = user_board[i][j];
+//           newRow.appendChild(rowItem);
+//       }
+//   }
+// }
 
 // /* Drag and Drop */
 // function allowDrop(ev) {
