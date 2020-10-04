@@ -73,60 +73,119 @@ function display(start_no, end_no) {
 }
 */
 /* Auto Card Generation */
-let user_board = [["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],
-                  ["", "", "", "", ""],]
+// let user_board = [["", "", "", "", ""],
+//                   ["", "", "", "", ""],
+//                   ["", "", "", "", ""],
+//                   ["", "", "", "", ""],
+//                   ["", "", "", "", ""],]
 
-window.onload = initAll;
-var usedNums = new Array(26);
+// window.onload = initAll;
+// var usedNums = new Array(26);
 
-function initAll() {
-  if (document.getElementById) {
-    document.getElementById("reload").onclick = anotherCard;
-    newCard();
-  }
-  else{
-    alert("Your browser does not support this script.");
-  }
-}
+// function initAll() {
+//   if (document.getElementById) {
+//     document.getElementById("reload").onclick = anotherCard;
+//     newCard();
+//   }
+//   else{
+//     alert("Your browser does not support this script.");
+//   }
+// }
 
-function newCard() {
-  for(var i = 0 ; i < 25 ; i++){
-      setSquare(i);
-    }
-}
+// function newCard() {
+//   for(var i = 0 ; i < 25 ; i++){
+//       setSquare(i);
+//     }
+// }
 
-function setSquare(thisSquare){
-  var currentSquare = "square" + thisSquare;
-  var colPlace = new Array(3,1,4,0,3,2,0,4,1,2,0,3,2,1,4,2,1,3,0,1,4,3,0,2,4);
-  var colBasis = colPlace[thisSquare] * 5;
-  var newNum = colBasis + getNewNum() + 1;
+// function setSquare(thisSquare){
+//   var currentSquare = "square" + thisSquare;
+//   var colPlace = new Array(3,1,4,0,3,2,0,4,1,2,0,3,2,1,4,2,1,3,0,1,4,3,0,2,4);
+//   var colBasis = colPlace[thisSquare] * 5;
+//   var newNum = colBasis + getNewNum() + 1;
 
-  do{
-    newNum = colBasis + getNewNum() + 1;
-  }while(usedNums[newNum]);
+//   do{
+//     newNum = colBasis + getNewNum() + 1;
+//   }while(usedNums[newNum]);
   
-  usedNums[newNum] = true;
-  document.getElementById(currentSquare).innerHTML = newNum;
-  user_board[Math.floor(thisSquare / 5)][thisSquare % 5] = newNum;
+//   usedNums[newNum] = true;
+//   document.getElementById(currentSquare).innerHTML = newNum;
+//   user_board[Math.floor(thisSquare / 5)][thisSquare % 5] = newNum;
+// }
+
+// function getNewNum() {
+//   return Math.floor(Math.random() * 5);
+// }
+
+// function anotherCard() {
+//   for (var i = 1; i < usedNums.length; i++) {
+//     usedNums[i] = false;
+//   };
+
+//   newCard();
+//   return false;
+// }
+
+// console.log(user_board);
+class User {
+  constructor() {
+    this.user_board = [["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],
+                       ["", "", "", "", ""],]
+    this.usedNums = new Array(26);
+  }
+
+  initAll() {
+    if (document.getElementById) {
+      document.getElementById("reload").onclick = this.anotherCard;
+      this.newCard();
+    }
+    else{
+      alert("Your browser does not support this script.");
+    }
+  }
+
+  newCard() {
+    for(var i = 0 ; i < 25 ; i++){
+        this.setSquare(i);
+      }
+  }
+
+  setSquare(thisSquare){
+    var currentSquare = "square" + thisSquare;
+    var colPlace = new Array(3,1,4,0,3,2,0,4,1,2,0,3,2,1,4,2,1,3,0,1,4,3,0,2,4);
+    var colBasis = colPlace[thisSquare] * 5;
+    var newNum = colBasis + this.getNewNum() + 1;
+  
+    do{
+      newNum = colBasis + this.getNewNum() + 1;
+    }while(this.usedNums[newNum]);
+    
+    this.usedNums[newNum] = true;
+    document.getElementById(currentSquare).innerHTML = newNum;
+    this.user_board[Math.floor(thisSquare / 5)][thisSquare % 5] = newNum;
+  }
+
+  getNewNum() {
+    return Math.floor(Math.random() * 5);
+  }
+  
+  anotherCard() {
+    for (var i = 1; i < this.usedNums.length; i++) {
+      this.usedNums[i] = false;
+    };
+  
+    this.newCard();
+    return false;
+  }
 }
 
-function getNewNum() {
-  return Math.floor(Math.random() * 5);
-}
 
-function anotherCard() {
-  for (var i = 1; i < usedNums.length; i++) {
-    usedNums[i] = false;
-  };
-
-  newCard();
-  return false;
-}
-
-console.log(user_board);
+const user = new User();
+window.onload = user.initAll();
+console.log(user.user_board);
 
 class Computer {
   constructor() {
@@ -164,6 +223,17 @@ class Computer {
 const comp = new Computer();
 comp.createBoard();
 console.log(comp.comp_board);
+
+var color=["#A9A9A9"];
+//var i =0;
+for(var i=0; i<25; i++){
+  var currentSQ="square" + i;
+  document.getElementById(currentSQ).addEventListener("click",
+  function(){
+  document.getElementById(currentSQ).style.background=color[0]
+  })
+}
+
 
 // if(checkUrlStr("game")) {
 //   createBoard(user_board);
