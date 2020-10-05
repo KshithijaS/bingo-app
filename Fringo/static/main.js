@@ -233,7 +233,22 @@ for(var i=0; i<25; i++){
   document.getElementById(currentSQ).style.background=color[0]
   })
 }
-
+function gameBoard(user_board){
+  const boardDiv = document.querySelector('#game-board');
+  for(var i=0; i<5; i++){
+    const newRow = document.querySelector('#div');
+    newRow.className='d-flex flex-row';
+    newRow.id=`${i}`;
+    boardDiv.appendChild(newRow);
+    for(var j = 0; j < 5; j++) {
+      const rowItem = document.createElement('div');
+      rowItem.className = 'empty';
+      rowItem.id = `${j}`;
+      rowItem.innerHTML = user_board[i][j];
+      newRow.appendChild(rowItem);
+    }
+  }
+}
 
 // if(checkUrlStr("game")) {
 //   createBoard(user_board);
@@ -241,23 +256,23 @@ for(var i=0; i<25; i++){
 
 
 // function createBoard(user_board) {
-//   const boardDiv = document.querySelector('#game-board');
-//   for(var i = 0; i < 5; i++){
-//       const newRow = document.createElement('div');
-//       newRow.className = 'd-flex flex-row';
-//       newRow.id = `${i}`;
-//       boardDiv.appendChild(newRow);
+//    const boardDiv = document.querySelector('#game-board');
+//    for(var i = 0; i < 5; i++){
+//        const newRow = document.createElement('div');
+//        newRow.className = 'd-flex flex-row';
+//        newRow.id = `${i}`;
+//        boardDiv.appendChild(newRow);
 
-//       for(var j = 0; j < 5; j++) {
-//           const rowItem = document.createElement('div');
-//           rowItem.className = 'empty';
-//           rowItem.id = `${j}`;
-//           rowItem.setAttribute('ondrop', 'drop(event)');
-//           rowItem.setAttribute('ondragover', 'allowDrop(event)');
-//           rowItem.innerHTML = user_board[i][j];
-//           newRow.appendChild(rowItem);
-//       }
-//   }
+//        for(var j = 0; j < 5; j++) {
+//            const rowItem = document.createElement('div');
+//            rowItem.className = 'empty';
+//            rowItem.id = `${j}`;
+//            rowItem.setAttribute('ondrop', 'drop(event)');
+//            rowItem.setAttribute('ondragover', 'allowDrop(event)');
+//            rowItem.innerHTML = user_board[i][j];
+//            newRow.appendChild(rowItem);
+//        }
+//    }
 // }
 
 // /* Drag and Drop */
